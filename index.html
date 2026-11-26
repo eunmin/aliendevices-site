@@ -4,39 +4,79 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alien Devices</title>
-<meta name="description" content="Alien Devices — independent app studio based in Seoul.">
+<meta name="description" content="Alien Devices — independent app studio in Seoul.">
 <style>
-  :root { --bg:#0a0a0a; --fg:#ededed; --muted:#8c8c8c; --accent:#ffffff; }
+  :root { --bg:#0a0a0a; --fg:#ededed; --muted:#8c8c8c; --dim:#5e5e5e; --line:#222222; }
   * { box-sizing:border-box; margin:0; padding:0; }
-  html,body { height:100%; }
-  body {
-    background:var(--bg); color:var(--fg);
-    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
-    display:flex; flex-direction:column; min-height:100vh; line-height:1.6;
-  }
-  main { flex:1; display:flex; flex-direction:column; justify-content:center;
-         max-width:720px; width:100%; margin:0 auto; padding:64px 24px; }
-  .mark { font-size:44px; margin-bottom:20px; }
-  h1 { font-size:clamp(36px,7vw,56px); letter-spacing:-0.02em; font-weight:700; }
+  body { background:var(--bg); color:var(--fg); line-height:1.7;
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
+  a { color:var(--fg); text-decoration:none; border-bottom:1px solid var(--muted); }
+  .wrap { max-width:760px; margin:0 auto; padding:0 24px; }
+  nav { padding:28px 0; display:flex; justify-content:space-between; align-items:center; }
+  nav .brand { border:0; font-weight:700; letter-spacing:-0.01em; }
+  nav .brand span { color:var(--muted); }
+  nav .links a { border:0; color:var(--muted); margin-left:20px; font-size:14px; }
+  nav .links a:hover { color:var(--fg); }
+  h1 { font-size:clamp(34px,6vw,52px); letter-spacing:-0.02em; font-weight:700; line-height:1.2; }
   h1 span { color:var(--muted); }
-  .lead { margin-top:16px; font-size:18px; color:var(--muted); max-width:520px; }
-  .contact { margin-top:32px; }
-  .contact a { color:var(--fg); text-decoration:none; border-bottom:1px solid var(--muted); padding-bottom:2px; }
-  footer { border-top:1px solid #222222; padding:24px; font-size:12.5px; color:var(--muted); }
-  footer .inner { max-width:720px; margin:0 auto; }
+  h2 { font-size:20px; margin:48px 0 12px; letter-spacing:-0.01em; }
+  h3 { font-size:16px; margin:28px 0 6px; }
+  p, li { color:#cfcfcf; font-size:15.5px; }
+  ul { padding-left:20px; margin:6px 0; }
+  .lead { margin-top:16px; font-size:18px; color:var(--muted); max-width:560px; }
+  .muted { color:var(--muted); }
+  footer { border-top:1px solid var(--line); margin-top:96px; padding:28px 0 40px; font-size:12.5px; color:var(--muted); }
   footer dl { display:grid; grid-template-columns:auto 1fr; gap:2px 14px; }
-  footer dt { color:#5e5e5e; }
-  footer .copy { margin-top:12px; }
+  footer dt { color:var(--dim); }
+  footer .copy { margin-top:14px; }
+  footer .copy a { color:var(--muted); border-color:var(--dim); margin-right:14px; }
+  .hero { padding:72px 0 24px; }
+  .apps { display:grid; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:16px; }
+  .app { background:var(--bg); padding:28px; }
+  .app .top { display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; }
+  .app h3 { margin:0; font-size:20px; }
+  .app h3 small { color:var(--muted); font-weight:400; font-size:14px; margin-left:8px; }
+  .tag { font-size:12px; color:var(--muted); border:1px solid #333; padding:2px 10px; border-radius:999px; white-space:nowrap; }
+  .app p { margin-top:10px; }
+  .app .plat { margin-top:12px; font-size:13px; color:var(--dim); }
 </style>
 </head>
 <body>
-<main>
-  <h1>Alien <span>Devices</span></h1>
-  <p class="lead">An independent app studio in Seoul, building small, well-made apps for iPhone and Android.</p>
-  <p class="contact">Contact — <a href="mailto:eunmin@aliendevices.fly">eunmin@aliendevices.fly</a></p>
+<nav class="wrap">
+  <a class="brand" href="/">Alien <span>Devices</span></a>
+  <div class="links"><a href="/#apps">Apps</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a></div>
+</nav>
+<main class="wrap">
+  <section class="hero">
+    <h1>Alien <span>Devices</span></h1>
+    <p class="lead">서울의 1인 앱 스튜디오입니다. 일상의 작은 불편을 덜어 주는, 작고 잘 만든 앱을 만듭니다.</p>
+    <p class="lead" style="font-size:15px">An independent app studio in Seoul, building small, well-made apps for iPhone, Android and Mac.</p>
+  </section>
+
+  <h2 id="apps">Apps</h2>
+  <div class="apps">
+    <article class="app">
+      <div class="top"><h3>닭 알람<small>Chicken Alarm</small></h3><span class="tag">출시 예정</span></div>
+      <p>대한민국 공휴일을 아는 알람. 한 번·요일·매월 지정일 반복에 더해 "공휴일엔 쉬기", "공휴일에만 울리기"를 설정할 수 있습니다. 공휴일 정보는 한국천문연구원 특일 정보를 사용합니다.</p>
+      <p class="plat">iPhone · Android</p>
+    </article>
+    <article class="app">
+      <div class="top"><h3>공인두문사<small>Lock Screen Memo</small></h3><span class="tag">개발 중</span></div>
+      <p>공인노무사 시험 준비를 위한 잠금화면 암기 도우미. 외워야 할 두문자와 메모를 등록해 두면 잠금화면 위젯에 무작위로 보여 줍니다. 휴대폰을 켤 때마다 자연스럽게 복습할 수 있습니다.</p>
+      <p class="plat">iPhone (iOS 17 이상)</p>
+    </article>
+    <article class="app">
+      <div class="top"><h3>빨리붙여<small>FastPaste</small></h3><span class="tag">개발 중</span></div>
+      <p>여러 줄의 텍스트를 한 줄씩 차례로 붙여 넣는 메뉴바 앱. 목록을 넣어 두고 단축키(Option+V)를 누를 때마다 다음 줄이 입력됩니다. 반복 입력 작업을 빠르게 끝낼 수 있습니다.</p>
+      <p class="plat">Mac (macOS 14 이상)</p>
+    </article>
+  </div>
+
+  <h2>Contact</h2>
+  <p>제휴·문의: <a href="mailto:eunmin@aliendevices.fly">eunmin@aliendevices.fly</a></p>
 </main>
 <footer>
-  <div class="inner">
+  <div class="wrap">
     <dl>
       <dt>상호</dt><dd>에일리언 디바이스 (Alien Devices)</dd>
       <dt>대표자</dt><dd>김은민</dd>
@@ -45,8 +85,7 @@
       <dt>주소</dt><dd>서울특별시 마포구 독막로18길 5</dd>
       <dt>이메일</dt><dd>eunmin@aliendevices.fly</dd>
     </dl>
-    <p class="copy">© 2026 Alien Devices</p>
+    <p class="copy"><a href="/privacy/">개인정보처리방침</a><a href="/support/">지원</a>© 2026 Alien Devices</p>
   </div>
 </footer>
-</body>
-</html>
+</body></html>
